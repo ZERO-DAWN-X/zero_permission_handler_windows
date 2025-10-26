@@ -1,14 +1,18 @@
-# zero_permission_handler_windows
+# Zero Permission Handler Windows
 
-This library disables Windows support in [permission_handler](https://pub.dev/packages/permission_handler).
+A compatibility library that provides a no-operation implementation for Windows in the [permission_handler](https://pub.dev/packages/permission_handler) package.
 
-The existing windows implementation does not work in Windows 7.
+## Overview
 
-## Usage
+This library addresses compatibility issues with the default Windows implementation of permission_handler, particularly on Windows 7 systems where the standard implementation fails to function properly. By providing a minimal, non-functional implementation, it allows applications using permission_handler to run on Windows without encountering runtime errors.
 
-```yaml
-dependency_overrides:
-  permission_handler_windows:
-    git:
-      url: https://github.com/nxive/zero_permission_handler_windows.git
-```
+## Key Features
+
+- Disables Windows-specific permission handling functionality
+- Ensures compatibility with Windows 7 and other legacy Windows versions
+- Maintains application stability by preventing permission-related crashes
+- Drop-in replacement for the default permission_handler_windows package
+
+## Installation
+
+Add the following dependency override to your `pubspec.yaml` file:
